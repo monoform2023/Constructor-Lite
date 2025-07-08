@@ -20,6 +20,13 @@ body {
     overflow: hidden;
 }
 
+/* Убираем min-height для мобильных устройств */
+@media screen and (max-width: 768px) {
+    .constructor-container {
+        min-height: auto;
+    }
+}
+
 /* Главное окно конструктора */
 .main-window {
     width: min(100vw, 3200px);
