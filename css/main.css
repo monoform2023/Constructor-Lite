@@ -1736,20 +1736,19 @@ input[type="checkbox"] {
     .main-window {
         position: fixed;
         left: 0; /* Оставляем у левого края */
-        top: 0;
+        top: 80px; /* Уменьшаем отступ сверху чтобы окно было ближе к блоку цены */
         margin: 0; /* Убираем центрирование */
         width: 130vw; /* Увеличиваем ширину на 30%, чтобы правая часть ушла за экран */
         max-width: none; /* Убираем ограничение max-width */
         
         /* Сохраняем пропорции, но ограничиваем высоту доступной областью */
         height: calc(130vw * 1919 / 3200); /* Пропорциональная высота для новой ширины */
-        max-height: calc(100vh - 250px); /* Не больше доступной высоты */
+        max-height: calc(100vh - 330px); /* Не больше доступной высоты (250px меню + 80px отступ) */
         
         z-index: 1; /* Размещаем под мобильным меню */
         
-        /* Прижимаем к верху мобильного меню (низ окна касается верха меню) */
-        bottom: 250px; /* Расстояние от низа экрана = высота мобильного меню */
-        top: auto;
+        /* Убираем bottom позиционирование */
+        bottom: auto;
     }
     
     /* Убираем отступы в главном контейнере на мобильных */
@@ -1850,10 +1849,29 @@ input[type="checkbox"] {
     margin-bottom: 15px;
     outline: none;
     transition: border-color 0.2s ease;
+    /* Специальные стили для iPhone */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color: #333 !important;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'><path fill='%23666' d='M2 0L0 2h4zm0 5L0 3h4z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 12px;
+    padding-right: 30px;
 }
 
 .mobile-tab-panel select:focus {
     border-color: #6c757d;
+    color: #333 !important;
+}
+
+/* Специальные стили для option элементов на iPhone */
+.mobile-tab-panel select option {
+    color: #333 !important;
+    background: #ffffff !important;
+    font-size: 14px !important;
+    padding: 8px 12px !important;
 }
 
 /* Стили для селектора типов секции - делаем как основной селектор */
@@ -1867,10 +1885,29 @@ input[type="checkbox"] {
     margin-bottom: 15px;
     outline: none;
     transition: border-color 0.2s ease;
+    /* Специальные стили для iPhone */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    color: #333 !important;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'><path fill='%23666' d='M2 0L0 2h4zm0 5L0 3h4z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 12px;
+    padding-right: 30px;
 }
 
 .mobile-variants-dropdown select:focus {
     border-color: #6c757d;
+    color: #333 !important;
+}
+
+/* Специальные стили для option элементов на iPhone */
+.mobile-variants-dropdown select option {
+    color: #333 !important;
+    background: #ffffff !important;
+    font-size: 14px !important;
+    padding: 8px 12px !important;
 }
 
 /* Стили цены */
